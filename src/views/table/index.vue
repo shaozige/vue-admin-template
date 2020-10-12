@@ -8,37 +8,31 @@
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.$index }}
+      <el-table-column align="center" label="状态" width="95">
+        <template slot-scope="scope"> 
+          <el-switch
+          v-model="value"
+          active-color="#13ce66"
+          inactive-color="#ff4949">
+        </el-switch>
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="内容">
         <template slot-scope="scope">
           {{ scope.row.title }}
         </template>
-      </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
+      </el-table-column> 
+      <el-table-column label="预期完成时间" width="110" align="center">
         <template slot-scope="scope">
           {{ scope.row.pageviews }}
         </template>
       </el-table-column>
-      <el-table-column class-name="status-col" label="Status" width="110" align="center">
+        <el-table-column label="创建时间" width="110" align="center">
         <template slot-scope="scope">
-          <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
+          <span>{{ scope.row.author }}</span>
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="Display_time" width="200">
-        <template slot-scope="scope">
-          <i class="el-icon-time" />
-          <span>{{ scope.row.display_time }}</span>
-        </template>
-      </el-table-column>
+      
     </el-table>
   </div>
 </template>
