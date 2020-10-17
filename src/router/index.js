@@ -51,10 +51,53 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: 'Dashboard', icon: '../assets/menu/group-a.png' }
     }]
   },
-
+  {
+    path: '/todo',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: '待办',
+        component: () => import('@/views/todo/index'),
+        meta: { title: '待办', icon: 'link' }
+      }
+    ]
+  },
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: 'Form', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        meta: { title: '笔记', icon: 'link' }
+      }
+    ]
+  },
+  {
+    path: '',
+    component: Layout,
+    children: [
+      {
+        path: '',
+        meta: { title: '日记', icon: 'link' }
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
